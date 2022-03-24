@@ -1,0 +1,128 @@
+/deep/ .el-dialog__header {
+    padding: 15px 24px;
+}
+
+/deep/ .container {
+    .el-collapse {
+        border: initial;
+    }
+
+    .el-button--small {
+        width: 80px;
+    }
+
+    .el-button--info.is-disabled, .el-button--info.is-disabled:hover, .el-button--info.is-disabled:focus, .el-button--info.is-disabled:active {
+        background-color: $font-color-disabled;
+    }
+
+    .uniform-title {
+        margin: 0 6px 0 32px;
+        font-size: 14px;
+    }
+
+    .el-form-item {
+        line-height: 32px;
+    }
+
+    .el-form-item__label {
+        font-size: 14px;
+    }
+
+    .product-line .el-input__inner {
+        background-color: $bg-color-grey;
+        border-color: $font-color-disabled;
+        color: $font-color-auxiliary;
+        opacity: 0.8;
+    }
+
+    .el-input__inner {
+        color: $font-color-secondary;
+        border-color: $font-color-disabled;
+        font-size: 14px;
+        height: 36px;
+        background-color: white;
+    }
+
+    .el-collapse-item__wrap {
+        border: none;
+    }
+
+    .el-textarea__inner {
+        min-height: 78px !important;
+        color: $font-color-secondary;
+        font-size: $font-size-base;
+        border-color: $font-color-disabled;
+        background-color: white;
+    }
+
+    .el-radio {
+        margin-right: 20px;
+    }
+
+    .needInfo, .orderInfo {
+        width: 600px;
+        margin: 20px 0 20px 300px;
+
+        .media-type {
+            width: 780px;
+
+            .el-radio-group {
+                width: 130px;
+            }
+        }
+
+        .logo {
+            .el-button {
+                border-color: $color-link;
+                color: $color-link;
+            }
+        }
+
+        .el-date-editor.el-input, .el-date-editor.el-input__inner {
+            width: 300px !important;
+        }
+    }
+
+    .delivery-item {
+        .el-collapse-item__header.is-active {
+            border-bottom: 1px solid #EBEEF5;
+        }
+
+        .el-collapse-item__content {
+            padding: 0 75px;
+        }
+
+        .new-delivery {
+            margin: 36px 0 25px 0;
+            font-size: $font-size-base;
+
+            .continue-upload {
+                margin-bottom: 20px;
+            }
+
+            .customized-button {
+                border-color: $theme-color;
+                color: $theme-color;
+            }
+
+            /deep/ .el-button {
+                font-size: $font-size-base;
+            }
+        }
+
+        .overdue {
+            margin-top: 56px;
+            text-align: center;
+
+            .button-length {
+                width: 88px;
+            }
+        }
+
+        .channel {
+            .el-select {
+                width: 306px;
+            }
+        }
+    }
+}

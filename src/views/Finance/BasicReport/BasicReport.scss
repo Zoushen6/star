@@ -1,0 +1,13 @@
+.search-content {
+    /deep/ .el-select {
+        width: 140px;
+
+        .el-input--suffix .el-input__inner {
+            width: 110px;
+        }
+    }
+}
+
+/deep/ .agent-account-item .el-input--suffix .el-input__inner {
+    width: 250px;
+}

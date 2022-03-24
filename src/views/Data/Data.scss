@@ -1,0 +1,21 @@
+// base color
+$block-title-color: rgba(0, 235, 252, 1);
+$text-color: rgba(255, 255, 255, 1);
+$text-color-secondary: rgba(255, 255, 255, 0.8);
+$text-color-third: rgba(255, 255, 255, 0.6);
+
+$data-color-blue: #55C1FF;
+$data-color-blue-secondary: #7DD5FF;
+
+$data-bg-color:rgba(3, 17, 34, 1);
+$data-bg-color-loading:rgba(3, 17, 34, 0.6);
+
+$data-border-color: #4D8CB2;
+
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+    textColorSecondary: $text-color-secondary;
+    dataColorBlueSecondary: $data-color-blue-secondary;
+}

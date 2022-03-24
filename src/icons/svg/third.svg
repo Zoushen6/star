@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>消耗排行_铜牌@2x</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="43.0931698%" id="linearGradient-1">
+            <stop stop-color="#FF9F00" offset="0%"></stop>
+            <stop stop-color="#FF860D" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0.699300699%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FFBA5F" offset="0%"></stop>
+            <stop stop-color="#FCA040" offset="100%"></stop>
+        </linearGradient>
+        <path d="M20.0621778,3.5 C23.8134665,5.66580754 26.1243557,9.66838493 26.1243557,14 C26.1243557,18.3316151 23.8134665,22.3341925 20.0621778,24.5 C16.3108891,26.6658075 11.6891109,26.6658075 7.93782217,24.5 C4.18653348,22.3341925 1.87564435,18.3316151 1.87564435,14 C1.87564435,9.66838493 4.18653348,5.66580754 7.93782217,3.5 C11.6891109,1.33419246 16.3108891,1.33419246 20.0621778,3.5 Z" id="path-3"></path>
+        <filter x="4.9%" y="4.9%" width="90.2%" height="90.2%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.998952672   0 0 0 0 0.524623092   0 0 0 0 0.0514323575  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <radialGradient cx="50%" cy="50.6064248%" fx="50%" fy="50.6064248%" r="49.3935752%" id="radialGradient-5">
+            <stop stop-color="#FFC593" offset="0%"></stop>
+            <stop stop-color="#E8802D" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="v1.1.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="创意消耗排行" transform="translate(-1377.000000, -256.000000)">
+            <g id="消耗排行卡片备份-2" transform="translate(968.000000, 256.000000)">
+                <g id="消耗排行_铜牌" transform="translate(409.000000, 0.000000)">
+                    <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="33" height="33"></rect>
+                    <path d="M10.083,0 L19.8460889,16.910254 L13.7839111,20.410254 L2,0 L10.083,0 Z" id="形状结合" fill="url(#linearGradient-1)"></path>
+                    <path d="M20.083,0 L29.8460889,16.910254 L23.7839111,20.410254 L12,0 L20.083,0 Z" id="形状结合备份" fill="url(#linearGradient-1)" transform="translate(20.923044, 10.205127) scale(-1, 1) translate(-20.923044, -10.205127) "></path>
+                    <g id="编组-4" transform="translate(2.000000, 5.000000)">
+                        <g id="多边形">
+                            <use fill="url(#linearGradient-2)" fill-rule="evenodd" xlink:href="#path-3"></use>
+                            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                        </g>
+                        <path d="M14,4.97372056 C15.5583847,4.97372056 17.1167694,5.37681794 18.5131397,6.1830127 C19.90951,6.98920746 21.0377949,8.13725953 21.8169873,9.48686028 C22.5961797,10.836461 23.0262794,12.3876105 23.0262794,14 C23.0262794,15.6123895 22.5961797,17.163539 21.8169873,18.5131397 C21.0377949,19.8627405 19.90951,21.0107925 18.5131397,21.8169873 C17.1167694,22.6231821 15.5583847,23.0262794 14,23.0262794 C12.4416153,23.0262794 10.8832306,22.6231821 9.48686028,21.8169873 C8.09048999,21.0107925 6.96220506,19.8627405 6.1830127,18.5131397 C5.40382034,17.163539 4.97372056,15.6123895 4.97372056,14 C4.97372056,12.3876105 5.40382034,10.836461 6.1830127,9.48686028 C6.96220506,8.13725953 8.09048999,6.98920746 9.48686028,6.1830127 C10.8832306,5.37681794 12.4416153,4.97372056 14,4.97372056 Z" id="多边形" stroke-opacity="0.764368444" stroke="#FFD7AE" fill="url(#radialGradient-5)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+.customized-table {
+    .customized-button {
+        border-color: $theme-color;
+        color: $theme-color;
+    }
+    /deep/.el-button {
+        font-size: $font-size-base;
+    }
+    .overdue {
+        margin: 36px 0 25px 0;
+    }
+}

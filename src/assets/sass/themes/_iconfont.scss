@@ -1,0 +1,147 @@
+@font-face {
+    font-family: "alternate";
+    src: url('~@/assets/sass/themes/Alternate.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'iconfont';  /* Project id 2693494 */
+    src: url('//at.alicdn.com/t/font_2693494_kyv501j3ybm.woff2?t=1646362902707') format('woff2'),
+    url('//at.alicdn.com/t/font_2693494_kyv501j3ybm.woff?t=1646362902707') format('woff'),
+    url('//at.alicdn.com/t/font_2693494_kyv501j3ybm.ttf?t=1646362902707') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-account:before {
+    content: '\e653';
+}
+
+.icon-setting:before {
+    content: "\e637";
+}
+
+.icon-operate-log:before {
+    content: "\e654";
+}
+
+.icon-material:before {
+    content: "\e652";
+    color: $font-color-base;
+}
+
+.el-icon-a:before {
+    content: "\e64f";
+    color: $font-color-base;
+}
+
+.icon-video:before {
+    content: "\e651";
+    font-size: 18px;
+}
+
+.icon-picture:before {
+    content: "\e650";
+    font-size: 18px;
+}
+
+.icon-add:before {
+    content: "\e657\00A0";
+    font-size: $font-size-addition;
+    color: $theme-color;
+}
+
+.icon-basics:before {
+    content: "\e65b";
+    font-size: 18px;
+}
+
+.icon-balance:before {
+    content: "\e65e";
+    font-size: 18px;
+}
+
+.icon-ad-stream:before {
+    content: "\e65d";
+    font-size: 18px;
+}
+
+.icon-transfer-accounts:before {
+    content: "\e65f";
+    font-size: 18px;
+}
+
+.icon-settlement:before {
+    content: "\e65c";
+    font-size: 18px;
+}
+
+.icon-first-page:before {
+    content: '\e667';
+    font-size: 18px;
+}
+
+.icon-select:before {
+    content: "\e67c\00A0";
+    color: $theme-color;
+    font-size: $font-size-headings;
+}
+
+.icon-download:before {
+    content: "\e67b\00A0";
+    color: $theme-color;
+    font-size: $font-size-headings;
+}
+
+.icon-delete:before {
+    content: "\e622";
+    color: $font-color-auxiliary;
+    font-size: $font-size-addition;
+    margin-left: 15px;
+}
+
+.icon-upload:before {
+    content: "\e64b\00A0";
+    color: $theme-color;
+    font-size: $font-size-base;
+}
+
+.icon-delivery-sure:before {
+    content: "\e659\00A0";
+    color: #FFA34B;
+    font-size: $font-size-headings;
+}
+
+.icon-delivery-upload:before {
+    content: "\e65a";
+    color: $font-color-disabled;
+    font-size: 32px;
+}
+
+.icon-prompt:before {
+    content: '\e629';
+    color: $font-color-auxiliary;
+    font-size: 18px;
+}
+
+.icon-table:before {
+    content: '\e655';
+}
+
+.icon-chart:before {
+    content: '\e666';
+}
+
+.icon-edit:before {
+    content: '\e668';
+}
+
+
+
+
+

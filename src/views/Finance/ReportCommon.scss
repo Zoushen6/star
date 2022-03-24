@@ -1,0 +1,95 @@
+/deep/ .customized-form {
+    .form-item-title {
+        margin-right: 12px;
+        line-height: 32px;
+        color: $font-color-secondary;
+    }
+
+    .time-picker + .el-form-item__error {
+        bottom: -50%;
+    }
+
+    &.el-form--inline .search-btn {
+        margin-right: 0;
+    }
+
+    .el-form-item__error {
+        bottom: 0;
+        top: initial;
+    }
+
+    .search-content {
+        .el-select {
+            .el-input--suffix .el-input__inner {
+                padding-right: 0;
+                min-width: initial;
+            }
+        }
+
+        .el-select input::-webkit-input-placeholder {
+            color: $font-color-base;
+        }
+    }
+}
+
+.table-box {
+    padding-bottom: 20px;
+
+    .report-title {
+        line-height: 32px;
+
+        .iconfont {
+            font-size: $font-size-base;
+        }
+
+        .customized-button {
+            border-color: $theme-color;
+            color: $theme-color;
+            height: 32px;
+            width: 98px;
+            padding: 6px 10px;
+        }
+
+        .amount {
+            vertical-align: middle;
+        }
+    }
+
+    /deep/ .customized-table {
+        .el-table {
+
+            .el-table__cell {
+                border-right: 1px solid $bg-color-divider;
+                border-bottom: 1px solid $bg-color-divider;
+            }
+
+            th.el-table__cell.is-leaf {
+                border-top: 1px solid $bg-color-divider;
+            }
+
+            th.el-table__cell.is-leaf:first-child {
+                border-left: 1px solid $bg-color-divider;
+            }
+
+            th.el-table__cell {
+                background-color: $bg-color-grey;
+            }
+
+            tbody {
+                tr {
+                    td:nth-child(1) {
+                        border-left: 1px solid $bg-color-divider;
+                    }
+                }
+            }
+
+            th.is-sortable > .cell {
+                height: 28px;
+            }
+        }
+
+        .el-table--striped .el-table__body tr.el-table__row--striped td.el-table__cell {
+            background-color: $bg-color-white;
+        }
+    }
+}
