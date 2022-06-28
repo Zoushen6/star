@@ -1,26 +1,33 @@
+import common from "@/tools/common";
+
+let date = (row) => {
+    return common.getNewDay(Number(row.create_time * 1000))
+};
 export let header = [
     {
-        "prop": "status",
+        "prop": "operation",
         "label": "状态",
         "fixed": true,
-        "minWidth": "160",
+        "align": "center",
+        "minWidth": "100",
         "showSlot": true,
-        "slotName": "status"
+        "slotName": "status",
     },
     {
-        "prop": "plan_name",
+        "prop": "ad_name",
         "label": "计划名称",
         "fixed": true,
         "minWidth": "160",
     },
     {
-        "prop": "date",
+        "prop": "create_time",
         "label": "投放时间",
         "fixed": true,
         "minWidth": "160",
+        "formatter": date
     },
     {
-        "prop": "advertiser_id",
+        "prop": "camp_name",
         "label": "所属广告组",
         "minWidth": "160",
     },
@@ -43,22 +50,22 @@ export let header = [
         "sortable": "descending",
     },
     {
-        "prop": "adv_show",
-        "label": "平均前次展现费用",
+        "prop": "avg_show_cost",
+        "label": "平均千次展现费用",
         "minWidth": "160",
         "sortable": "descending",
-    },{
-        "prop": "adv_click",
-        "label": "平均前次点击费用",
+    }, {
+        "prop": "avg_1000_click_cost",
+        "label": "平均千次点击费用",
         "minWidth": "160",
         "sortable": "descending",
-    },{
-        "prop": "adv_price",
-        "label": "平均前次点击单价",
+    }, {
+        "prop": "avg_click_cost",
+        "label": "平均单次点击单价",
         "minWidth": "160",
         "sortable": "descending",
-    },{
-        "prop": "clicks",
+    }, {
+        "prop": "ctr",
         "label": "点击率",
         "minWidth": "160",
         "sortable": "descending",

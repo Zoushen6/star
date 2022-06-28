@@ -1,83 +1,118 @@
 <template>
-    <div class="flex-vertical flex-1 m-l-r-16">
-        <el-form class="customized-form padding-top background-white p-l-r-24 flex-1 m-b-20" :inline="false" :model="addForm" :rules="optionsRule" ref="addForm" >
-            <div class="basic">
-                <div>基础信息</div>
-                <el-form-item prop="account" :required="false" class="search-content" label="投放账户">
-                    <el-select v-model="addForm.account" placeholder="请选择投放账户" clearable>
-                        <el-option v-for="(item,idx) in accountList" :key="item.company_id" :label="item.company_name"
-                                   :value="item.company_id"></el-option>
-                    </el-select>
-                </el-form-item>
-                <el-form-item prop="selectValue" :required="false" class="search-content">
-                    <customized-button-group class="button-group" :button-list="buttonList" :button-style="buttonStyle" @handleButton="handleButton">
-                    </customized-button-group>
-                </el-form-item>
-            </div>
-        </el-form>
-
-        <choose-ad-dialog ref="chooseAd" @dialogClose="reset"></choose-ad-dialog>
+    <div class="m-b-16">
+        <basic-info @basicListChange="basicListChange" ref="basicInfo" style="margin-bottom: 16px"></basic-info>
+        <plan @planListChange="planListChange" :account="account" :campid="campId" ref="planInfo" style="margin-bottom: 16px"></plan>
+        <creative style="margin-bottom: 16px" ref="creative" @creativeListChange="creativeListChange"></creative>
+        <allocation-rules style="margin-bottom: 16px" ref="allocationRules"
+                          @allocationListChange="allocationListChange"></allocation-rules>
+        <div class="flex m-l-r-16 background-white">
+            <el-button class="customized-button" @click="resetAll">全部重置</el-button>
+            <el-button type="primary" class="customized-button" @click="submit">提交广告</el-button>
+        </div>
     </div>
-
 </template>
 
 <script>
-import CustomizedButtonGroup from "@views/Popular/SmartCreate/CustomizedButtonGroup";
-import CustomizedDialog from "@components/CustomizedDialog";
-import ChooseAdDialog from "@views/Popular/SmartCreate/ChooseAdDialog";
+import BasicInfo from "@views/Popular/SmartCreate/BasicInfo/BasicInfo.vue";
+import Plan from "@views/Popular/SmartCreate/Plan/Plan.vue";
+import Creative from "@views/Popular/SmartCreate/Creative/Creative.vue";
+import AllocationRules from "@views/Popular/SmartCreate/AllocationRules/AllocationRules.vue";
+
 export default {
     name: "SmartCreate",
-    components:{CustomizedDialog, CustomizedButtonGroup,ChooseAdDialog},
+
+    components: {BasicInfo, Plan, Creative, AllocationRules},
+
     data() {
         return {
-            addForm: {
-                account: ''
-            },
-            accountList:[
-                {
-                    company_name:'aaaaaaaaaa',
-                    company_id:'112'
-                }
-            ],
-            buttonList: [
-                {
-                    label:"昨日排行",
-                    value:1,
-                },{
-                    label:"7日排行",
-                    value:7,
-                },{
-                    label:"30日排行",
-                    value:30,
-                },
-            ],
-            buttonStyle: '',
-            optionsRule:{}
+            summaryList: {},
+            account: [],
+            campId: []
         }
     },
+
+    activated() {
+        this.resetAll();
+    },
+
     methods: {
-        handleButton(idx) {
-            this.buttonStyle = this.buttonList[idx].value;
-            console.log(idx,this.buttonStyle)
-            this.openDialog('chooseAd')
+        resetAll() {
+            this.$refs.basicInfo.reset();
+            this.$refs.planInfo.reset();
+            this.$refs.allocationRules.reset();
+            this.$refs.creative.reset();
         },
 
-        openDialog(op) {
-            if (this.$refs[op]) this.$refs[op].openDialog();
+        submit() {
+            let p0 = this.$refs.basicInfo.handleValid();
+            let p1 = this.$refs.planInfo.handleValidFormData();
+            let p2 = this.$refs.planInfo.handleValidStrategyFormData();
+            let p3 = this.$refs.creative.handleValid();
+            let p4 = this.$refs.allocationRules.handleValid();
+            Promise.all([p0,p1,p2,p3,p4]).then((values) => {
+                // console.log('验证成功调接口')
+                this.axiosCreate(this.summaryList).then(res => {
+                    if(res&&res.data.code === 200) {
+                        this.$message({
+                            message: "提交成功",
+                            type: "success"
+                        });
+                        this.$router.push("/popular/popPlanReport");
+                    }
+                })
+            });
         },
 
+        axiosCreate(params) {
+            let media_ids = []
+            params.creative.picList.forEach(item => media_ids.push(item.id));
+            params.creative.videoList.forEach(item => media_ids.push(item.id));
+            let creative_titles = [];
+            params.creative.tableData.forEach(item => creative_titles.push(item.title));
+            let adv_info = JSON.parse(JSON.stringify(params.basic.adv_info))
+            adv_info.forEach((item,idx) => {
+                if(item.camp_ids.length === 0) {
+                    adv_info.splice(idx,1)
+                }
+            })
+            return this.$http.post("/tt/ad/create",
+                {
+                    name: params.allocation.planName,
+                    adv_info: JSON.stringify(adv_info),
+                    media_ids: JSON.stringify(media_ids),
+                    creative_titles: JSON.stringify(creative_titles),
+                    advertiser_id: params.plan.itemAdvertiserId,
+                    ad_id: params.plan.adId,
+                    audience_package_id: params.plan.audience_package_id,
+                    operation: params.allocation.status===0 ? 'enable' : 'disable',
+                })
+        },
 
-        reset() {
+        basicListChange(list) {
+            Object.assign(this.summaryList, {basic: list})
+            this.account = list.adAccountList;
+            this.campId = list.campaignId;
+        },
 
-        }
+        planListChange(list) {
+            Object.assign(this.summaryList, {plan: list})
+        },
+
+        creativeListChange(list) {
+            Object.assign(this.summaryList, {creative: list})
+        },
+
+        allocationListChange(list) {
+            Object.assign(this.summaryList, {allocation: list})
+            // console.log(this.summaryList)
+        },
     }
 }
 </script>
 
 <style scoped lang="scss">
-.basic {
-    /deep/.el-form-item__label {
-        line-height: 32px;
-    }
+.background-white {
+    padding: 17px 0;
+    justify-content: center;
 }
 </style>

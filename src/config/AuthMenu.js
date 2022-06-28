@@ -166,7 +166,18 @@ export const FINANCE_CENTER_LIST = [
         authority: FINANCE_CENTER_ROUTE_MASK,
         title: "广告主流水报表",
         iconfont: "icon-ad-stream",
-        path: "adStreamReport",
+        path: "adFinance",
+        children: [
+            {
+                authority: FINANCE_CENTER_ROUTE_MASK,
+                title: "AD平台",
+                path: "adStreamReport"
+            },{
+                authority: FINANCE_CENTER_ROUTE_MASK,
+                title: "千川平台",
+                path: "qianChuanReport"
+            },
+        ]
     }, {
         authority: FINANCE_CENTER_ROUTE_MASK,
         title: "转账流水报表",
@@ -184,12 +195,19 @@ export const POPULAR_LIST = [
     {
         authority: FINANCE_CENTER_ROUTE_MASK,
         title: "智能创建",
-        iconfont: "icon-first-page",
+        iconfont: "icon-intelligent-creation",
         path: "smartCreate",
-    },{
+    },
+    {
         authority: FINANCE_CENTER_ROUTE_MASK,
         title: "计划报表",
-        iconfont: "icon-first-page",
+        iconfont: "icon-plan-report",
         path: "popPlanReport",
     },
+    {
+        authority: FINANCE_CENTER_ROUTE_MASK,
+        title: "受众分析",
+        iconfont: "icon-first-page",
+        path: "audienceAnalysis",
+    }
 ]

@@ -39,6 +39,7 @@ const SummaryReport = () => import('@views/Finance/BasicReport/SummaryReport/Sum
 const BalanceQuery = () => import('@views/Finance/BalanceReport/BalanceQuery/BalanceQuery.vue')
 const QuotaQuery = () => import('@views/Finance/BalanceReport/QuotaQuery/QuotaQuery.vue')
 const AdStreamReport = () => import('@views/Finance/AdStreamReport/AdStreamReport.vue')
+const QianChuanReport = () => import('@views/Finance/AdStreamReport/QianChuanReport.vue')
 const TransferStreamReport = () => import('@views/Finance/TransferStreamReport/TransferStreamReport.vue')
 const SettlementReport = () => import('@views/Finance/SettlementReport/SettlementReport.vue')
 const DownloadCenter = () => import('@views/DownloadCenter/DownloadCenter.vue')
@@ -50,6 +51,7 @@ const StarMapReport = () => import('@views/Finance/BasicReport/StarMapReport/Sta
 const Popular = () => import('@/views/Popular/Popular.vue')
 const SmartCreate = () => import('@/views/Popular/SmartCreate/SmartCreate.vue')
 const PopPlanReport = () => import('@/views/Popular/PopPlanReport/PopPlanReport.vue')
+const AudienceAnalysis = () => import('@/views/Popular/AudienceAnalysis/AudienceAnalysis.vue')
 
 
 Vue.use(Router);
@@ -194,17 +196,17 @@ export const asyncRoutes = [
                         name: 'summaryReport',
                         component: SummaryReport,
                         meta: {auth: FINANCE_CENTER_ROUTE_MASK}
-                    },{
+                    }, {
                         path: 'planReport',
                         name: 'planReport',
                         component: PlanReport,
                         meta: {auth: FINANCE_CENTER_ROUTE_MASK}
-                    },{
+                    }, {
                         path: 'consumeReport',
                         name: 'consumeReport',
                         component: ConsumeReport,
                         meta: {auth: FINANCE_CENTER_ROUTE_MASK}
-                    },{
+                    }, {
                         path: 'starMapReport',
                         name: 'starMapReport',
                         component: StarMapReport,
@@ -224,6 +226,11 @@ export const asyncRoutes = [
                         path: 'adStreamReport',
                         name: 'adStreamReport',
                         component: AdStreamReport,
+                        meta: {auth: FINANCE_CENTER_ROUTE_MASK},
+                    }, {
+                        path: 'qianChuanReport',
+                        name: 'qianChuanReport',
+                        component: QianChuanReport,
                         meta: {auth: FINANCE_CENTER_ROUTE_MASK},
                     }, {
                         path: 'transferStreamReport',
@@ -250,15 +257,20 @@ export const asyncRoutes = [
                         name: 'smartCreate',
                         component: SmartCreate,
                         meta: {auth: FINANCE_CENTER_ROUTE_MASK}
-                    },{
+                    }, {
                         path: 'popPlanReport',
                         name: 'popPlanReport',
                         component: PopPlanReport,
                         meta: {auth: FINANCE_CENTER_ROUTE_MASK}
+                    }, {
+                        path: 'audienceAnalysis',
+                        name: 'audienceAnalysis',
+                        component: AudienceAnalysis,
+                        meta: {auth: FINANCE_CENTER_ROUTE_MASK}
                     }
                 ],
                 meta: {auth: FINANCE_CENTER_ROUTE_MASK}
-            },{
+            }, {
                 path: 'downloadCenter',
                 name: 'downloadCenter',
                 component: DownloadCenter,

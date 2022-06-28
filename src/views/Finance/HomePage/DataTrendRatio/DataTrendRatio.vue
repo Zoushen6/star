@@ -64,13 +64,10 @@ export default {
             option,
             list:[],
             firstItem:"cost",
-            secondItem:"convert_cost",
+            secondItem:"company",
             radioList:{
                 "cost": {
                     label:'总消耗',
-                },
-                "convert_cost": {
-                    label:'转化成本',
                 },
                 "company": {
                     label:'有消耗公司',

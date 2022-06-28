@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-vertical flex-1 setting-box overflow-hidden">
+    <div class="flex-vertical flex-1 setting-box">
         <el-form :inline="true" class="customized-form padding-top">
             <el-form-item>
                 <el-button type="primary" @click="addIndustry">添加行业</el-button>
@@ -17,6 +17,7 @@
         <!-- 表格区 -->
         <customized-table
             class="flex-1 flex-vertical overflow-hidden customized-table"
+            :scroll-in-table="false"
             :loading="loading"
             :Data="tableData"
             :Header="header"

@@ -61,7 +61,6 @@
 </template>
 
 <script>
-import CustomizedTable from "@components/CustomizedTable";
 import PaginationMixin from "@mixins/PaginationMixin";
 import {LastSeveralDays} from "@tools/DateUtils";
 import {planList,header} from "@views/Finance/AdStreamReport/AdStreamReport.js";
@@ -69,8 +68,6 @@ import FinanceReportMixin from "@views/Finance/FinanceReportMixin";
 
 export default {
     name: "AdStreamReport",
-
-    components: {CustomizedTable},
 
     mixins:[PaginationMixin,FinanceReportMixin],
 

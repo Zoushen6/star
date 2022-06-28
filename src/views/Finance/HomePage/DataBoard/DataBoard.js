@@ -3,6 +3,9 @@ export const headList = {
         "cost": "总消耗",
         "grants_cost": "赠款消耗",
     },
+    "data_cost_star": {
+        "cost_star":"星图消耗"
+    },
     "data_cost_customer": {
         "cost_customer":"有消耗客户数"
     },
@@ -20,6 +23,10 @@ export const headList = {
 
 export const data = {
     "cost": {
+        data: {"now": "0", "last": "0", "circleRatio": 0, "uad": 0},
+        loading: false
+    },
+    "cost_star": {
         data: {"now": "0", "last": "0", "circleRatio": 0, "uad": 0},
         loading: false
     },

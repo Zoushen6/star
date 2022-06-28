@@ -68,6 +68,15 @@
         position: sticky;
         width: 100%!important;
     }
+
+    //el-switch样式
+    .el-switch .el-switch__core:hover {
+        background-color: $font-color-plain !important;
+    }
+
+    .el-switch.is-checked .el-switch__core:hover {
+        background-color: $theme-color !important;
+    }
 }
 
 .mini-table {

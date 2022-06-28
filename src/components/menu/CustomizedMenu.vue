@@ -173,6 +173,10 @@
         min-width: initial;
     }
 
+    .header-menu-item:hover {
+        background-color: #F2F5FF;
+    }
+
     .iconfont {
         margin-right: 8px;
         font-family: 'iconfont';

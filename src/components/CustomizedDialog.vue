@@ -16,7 +16,7 @@
         <slot name="title" slot="title"></slot>
         <slot></slot>
         <div v-if="showFooter" name="footer" slot="footer" class="dialog-footer text-right">
-            <el-button  v-if="showSubmit" type="primary" @click="$emit('submit')" size="small"> 确 认</el-button>
+            <el-button  v-if="showSubmit" :disabled="disabled" type="primary" @click="$emit('submit')" size="small" :class="isReverse ? 'reverse' : ''"> 确 认</el-button>
             <el-button v-if="showCancel" @click="cancel" size="small">取 消</el-button>
         </div>
     </el-dialog>
@@ -43,9 +43,17 @@
                 type: Boolean,
                 default: true
             },
+            disabled: {
+                type: Boolean,
+                default: false
+            },
             showCancel:{
                 type: Boolean,
                 default: true
+            },
+            isReverse: {
+              type: Boolean,
+              default: false
             },
             appendToBody: {
                 type: Boolean,
@@ -116,6 +124,11 @@
     .el-button--small {
         font-size: $font-size-base;
     }
+}
+
+.reverse {
+  float: right;
+  margin-left: 10px;
 }
 
 /deep/ .el-dialog__body {

@@ -1,5 +1,5 @@
 <template>
-    <div class="setting-box flex-1 overflow-hidden flex-vertical">
+    <div class="setting-box flex-1 flex-vertical">
 
             <!-- 筛选区 -->
                 <el-form :inline="true" class="clear-float customized-form padding-top">
@@ -38,7 +38,7 @@
                     <el-form-item>
                         <el-button class="short-button" size="small" @click="resetForm">重置</el-button>
                     </el-form-item>
-                    <el-form-item class="f-r">
+                    <el-form-item class="f-r" style="margin-right: 0">
                         <el-button type="primary" @click="addNew" class="main-button" size="small">新增账号</el-button>
                     </el-form-item>
                 </el-form>
@@ -48,6 +48,7 @@
             <!-- 表格区 -->
             <customized-table
                 class="flex-1 overflow-hidden flex-vertical customized-table"
+                :scroll-in-table="false"
                 :loading="loading"
                 :Data="tableData"
                 :Header="header"
@@ -791,6 +792,17 @@
 
 <style lang="scss" scoped>
 
+    /deep/ .el-table .cell {
+        font-size: $font-size-addition;
+
+        .el-button {
+            font-size: $font-size-addition;
+        }
+    }
+
+    /deep/ .el-table th.el-table__cell {
+        background-color: $bg-color-grey;
+    }
     /deep/ .dialog-body .el-form-item__label {
         font-size: $font-size-base;
     }

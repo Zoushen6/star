@@ -1,0 +1,44 @@
+.container {
+    .customized-form {
+        display: flex;
+        justify-content: space-between;
+
+        .title {
+            line-height: 32px;
+            padding-left: 24px;
+            color: $font-color-base;
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    /deep/ .customized-table {
+        //父级可用大小775.5px   fit-content max-content min-content取到776px(浏览器好像不支持)  100%或其他都是775.5px
+        //99.99%取到775.42px  后面的小数大于等于0.5时 客户消耗排行表格右border就显示不出来 小于可以
+        //微调homepage :gutter=16.1  宽度小数不是0.5也可以显示border
+        width: 99.99%;
+        height: 350px;
+
+        .el-table {
+            .el-table__cell {
+                border-right: 1px solid $bg-color-divider;
+                border-bottom: 1px solid $bg-color-divider;
+            }
+
+            th.el-table__cell.is-leaf {
+                border-top: 1px solid $bg-color-divider;
+
+                &:first-child {
+                    border-left: 1px solid $bg-color-divider;
+                }
+            }
+
+            tbody {
+                tr {
+                    td:nth-child(1) {
+                        border-left: 1px solid $bg-color-divider;
+                    }
+                }
+            }
+        }
+    }
+}

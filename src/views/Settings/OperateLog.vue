@@ -1,5 +1,5 @@
 <template>
-    <div class="setting-box flex-1 overflow-hidden flex-vertical">
+    <div class="setting-box flex-1 flex-vertical">
         <el-form :model="searchForm"  ref="searchForm" :inline="true" class="customized-form padding-top">
             <el-form-item prop="log_time">
                 <customized-time-picker
@@ -56,6 +56,7 @@
         <!-- 表格区 -->
         <customized-table
             class="flex-1 overflow-hidden flex-vertical customized-table"
+            :scroll-in-table="false"
             :loading="loading"
             :Data="logList"
             :Header="header"
@@ -220,6 +221,14 @@
 </script>
 
 <style scoped lang="scss">
+
+    /deep/ .el-table .cell {
+        font-size: $font-size-addition;
+    }
+
+    /deep/ .el-table th.el-table__cell {
+        background-color: $bg-color-grey;
+    }
 
     /deep/.el-table {
         .el-table__cell {
